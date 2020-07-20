@@ -12,6 +12,8 @@ class Solution:
         bucket = dict()
         for word in strs:
             key = ''.join(sorted(word))
+
+            #these can be simplified with d[key] = d.get(key, []) + [w]
             if not key in bucket.keys():   
                 bucket[key] = [word]
             else:
