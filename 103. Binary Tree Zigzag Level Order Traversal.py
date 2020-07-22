@@ -4,16 +4,20 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# more efficient as list.pop() is actually O(n)
+from collections import deque
+
 class Solution:
     def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
         self.result = []
-        self.levelOrder([root])
+        self.levelOrder(deque([root]))
         return self.result
     
     def levelOrder(self, thisRowStack,isToRight=True):
         if len(thisRowStack) == 0 :
             return
-        newRowStack = []
+        newRowStack = deque([])
         thisRowDisplay = []
 
         # print("entering levelOrder")
@@ -30,5 +34,3 @@ class Solution:
         if thisRowDisplay != []:
             self.result.append(thisRowDisplay)
         return self.levelOrder(newRowStack,not isToRight)
-
-
