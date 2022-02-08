@@ -46,3 +46,5 @@ function bfs(queue, root) {
 function isNull(root) {
   return !root || Object.is(root.val, null) || Object.is(root.val, undefined)
 }
+
+//TODO: solve recursively

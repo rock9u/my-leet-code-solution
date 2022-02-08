@@ -30,3 +30,5 @@ var isSymmetric = function (root) {
   }
   return true
 }
+
+//TODO: solve recursively
